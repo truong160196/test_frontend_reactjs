@@ -1,0 +1,135 @@
+  /*Begin Header section*/
+  .header {
+    background: #ffffff;
+    z-index: 999;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    border-bottom: 1px solid #cccccc;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .header .company-name {
+    position: absolute;
+    z-index: 99;
+    left: 70px;
+    top: 20px;
+  }
+
+  .header .company-name h3 {
+    color: #008000;
+    font-size: 25px;
+  }
+
+  .header .right-header {
+    float: right;
+  }
+
+  .header .right-header ul {
+    display: inline-flex;
+    height: 70px;
+  }
+
+  .header .right-header ul li {
+    padding: 5px 10px;
+    border-left: 1px solid #cccccc;
+    -webkit-box-shadow: -1px 1px 1px 0px rgba(201,201,201,1);
+    -moz-box-shadow: -1px 1px 1px 0px rgba(201,201,201,1);
+    box-shadow: -1px 1px 1px 0px rgba(201,201,201,1);
+    font-size: 17px;
+  }
+
+  .header .right-header ul li:hover {
+    background: #f2f2f2;
+  }
+
+  .header .right-header ul li i {
+    font-size: 25px;
+    color: #8c8c8c;
+    padding: 20px;
+  }
+
+  .header .right-header ul li .select-lang
+  {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .header .right-header ul li .select-user
+  {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+  }
+
+  .header .right-header ul li .select-lang:hover,
+  .header .right-header ul li .select-lang:focus,
+  .header .right-header ul li .select-user:hover,
+  .header .right-header ul li .select-user:focus
+  {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown-toggle::after {
+    margin-left: 1.55em;
+  }
+
+  .header .right-header ul li .account {
+    display: inline-flex;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .header .right-header ul li .account .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .header .right-header ul li .account .avatar img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .header .right-header ul li .info-user {
+    margin-left: 15px;
+    text-align: left;
+  }
+
+  .header .right-header ul li .info-user h5 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom:0;
+  }
+
+  .header .right-header ul li .info-user p {
+    color: #bfbfbf;
+    font-size: 12px;
+    padding: 0;
+    font-weight: 200;
+  }
+
+  .header .right-header ul li .icon-bar {
+    position: absolute;
+    z-index: 99;
+    margin-left: -5px;
+    margin-top: -5px;
+    background: #008000;
+    border-radius: 50%;
+    color: #ffffff !important;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px;
+  }
