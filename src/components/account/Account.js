@@ -1,5 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import './account.css';
+
+import * as Types from '../../constant/ActionTypes';
+
+import {
+    actUploadImage,
+    actGetUser,
+} from '../../actions/account/index';
 
 //import component
 import ModalUpdateAccount from './ModalUpdate';
@@ -12,8 +21,10 @@ class Account extends React.Component {
         }
     }
     
-    componentWillMount = async() => {
-        //
+    componentDidMount = async() => {
+       const { getUser } = this.props;
+
+       getUser();
     }
 
     openModalUpdate = () => {
@@ -33,9 +44,13 @@ class Account extends React.Component {
     }
 
     render() {
+        const {account} = this.props;
         const {
             isOpenModal,
         } = this.state;
+
+        const {user} = account;
+        console.log(user);
 
         return (
             <section className="body-main">
@@ -47,7 +62,7 @@ class Account extends React.Component {
                         <div className="card card-info">
                             <div className="card-body">
                                 <div className="avatar">
-                                    <img src="https://eon51.com/wp-content/uploads/2018/05/logo-tng-51.png" />
+                                    <img src={user && user.logoUrl ? user.logoUrl : ''}/>
                                 </div>
                                 <h4>STORE INFO.</h4>
                                 <table>
@@ -56,15 +71,15 @@ class Account extends React.Component {
                                         <col width="60%" />
                                         <tr>
                                             <td className="label">Name:</td>
-                                            <td className="content">K.O.I The.</td>
+                                            <td className="content">{user && user.name ? user.name : ''}</td>
                                         </tr>
                                         <tr>
                                             <td className="label">Address:</td>
-                                            <td className="content">521 Hồ Tùng Mậu, D1, HCM</td>
+                                            <td className="content">{user && user.address ? user.address : ''}</td>
                                         </tr>
                                         <tr>
                                             <td className="label">Phone #:</td>
-                                            <td className="content">(338) 886-9944</td>
+                                            <td className="content">{user && user.phone ? user.phone : ''}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -75,15 +90,21 @@ class Account extends React.Component {
                                         <col width="60%" />
                                         <tr>
                                             <td className="label">Company Name:</td>
-                                            <td className="content">K.O.I The International Company</td>
+                                            <td className="content">
+                                                {user && user.phone && user.redInvoices.name ? user.redInvoices.name : ''}
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td className="label">Address:</td>
-                                            <td className="content">9682 Wakehurst Avenue Arlington Heights, IL, 60004</td>
+                                            <td className="content">
+                                                {user && user.phone && user.redInvoices.address ? user.redInvoices.address : ''}
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td className="label">MST:</td>
-                                            <td className="content">P77744944</td>
+                                            <td className="content">
+                                                {user && user.phone && user.redInvoices.taxCode ? user.redInvoices.taxCode : ''}
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -137,4 +158,12 @@ class Account extends React.Component {
     }
 }
 
-export default Account;
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = dispatch => ({
+    getUser: () => {
+        dispatch(actGetUser());
+      },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Account);

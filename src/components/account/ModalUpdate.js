@@ -1,56 +1,40 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import './account.css';
 
 import * as Types from '../../constant/ActionTypes';
 
-class Account extends React.Component {
+import {
+    actUploadImage,
+    actPostUpdate,
+} from '../../actions/account/index';
+
+class ModalUpdate extends React.Component {
     constructor(props) {
         super(props);
         this.formRef = React.createRef();
         this.fileUpload = React.createRef();
-        this.state = {
-            nameStore: {
-                value: '',
-                error: ''
-            },
-            addressStore: {
-                value: '',
-                error: ''
-            },
-            districtStore: {
-                value: '',
-                error: ''
-            },
-            cityStore: {
-                value: '',
-                error: ''
-            },
-            phoneStore: {
-                value: '',
-                error: ''
-            },
-            nameRedInvoice: {
-                value: '',
-                error: ''
-            },
-            addressRedInvoice: {
-                value: '',
-                error: ''
-            },
-            districtRedInvoice: {
-                value: '',
-                error: ''
-            },
-            cityRedInvoice: {
-                value: '',
-                error: ''
-            },
-            taxRedInvoice: {
-                value: '',
-                error: ''
-            }, 
+        this.state = props.account.model;
+    }
+
+    componentDidMount = async() => {
+        //
+    }
+
+    componentWillReceiveProps = (props) => {
+        const {account} = props;
+
+        const {imageAvatar} = this.state;
+
+        if (account && account.image !== imageAvatar) {
+            this.setState({
+                imageAvatar: account.image
+            })
         }
     }
+
+
     closeModal = () => {
         const { closeModalUpdate } = this.props;
 
@@ -86,17 +70,61 @@ class Account extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log('submit');
+        const {postUpdate} = this.props;
+
+        const {
+            idStore,
+            idRedInvoice,
+            nameStore,
+            addressStore,
+            districtStore,
+            cityStore,
+            phoneStore,
+            nameRedInvoice,
+            addressRedInvoice,
+            districtRedInvoice,
+            cityRedInvoice,
+            taxRedInvoice,
+            imageAvatar,
+        } = this.state;
+
+        const request = {
+            idStore,
+            idRedInvoice,
+            nameStore: nameStore.value,
+            addressStore: addressStore.value,
+            districtStore: districtStore.value,
+            cityStore: cityStore.value,
+            phoneStore: phoneStore.value,
+            nameRedInvoice: nameRedInvoice.value,
+            addressRedInvoice: addressRedInvoice.value,
+            districtRedInvoice: districtRedInvoice.value,
+            cityRedInvoice: cityRedInvoice.value,
+            taxRedInvoice: taxRedInvoice.value,
+            imageAvatar: imageAvatar,
+        }
+
+        postUpdate(request);
     }
 
     handleSelectImage() {
         this.fileUpload.current.click();
-        
-       console.log(this.fileUpload.current)
     }
 
     upLoadImage = () => {
-        console.log(this.fileUpload.current.files)
+        const { uploadImage } = this.props;
+
+        const files = this.fileUpload.current.files;
+        
+        if (files && files.length > 0) {
+            const request = {
+                file: files[0]
+            }
+
+            this.fileUpload.current.value = null;
+            uploadImage(request);
+        }
+
     }
 
     render() {
@@ -115,6 +143,7 @@ class Account extends React.Component {
             districtRedInvoice,
             cityRedInvoice,
             taxRedInvoice,
+            imageAvatar,
         } = this.state;
 
         const selectDistrict = Types.DISTRICT.map((item, index) => {
@@ -153,7 +182,7 @@ class Account extends React.Component {
                                     onClick={() => this.handleSelectImage()}
                                 >
                                     <img
-                                        src="https://eon51.com/wp-content/uploads/2018/05/logo-tng-51.png"
+                                        src={imageAvatar}
                                     />
                                 </div>
                                 <input
@@ -333,4 +362,15 @@ class Account extends React.Component {
     }
 }
 
-export default Account;
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = dispatch => ({
+    uploadImage: request => {
+      dispatch(actUploadImage(request));
+    },
+    postUpdate: request => {
+        dispatch(actPostUpdate(request));
+      },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ModalUpdate);

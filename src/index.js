@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import appReducers from './reducers/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'react-notifications/lib/notifications.css';
 import './index.css';
 import App from './components/app/App';
 import ErrorBoundary from './components/errorHandling/ErrorBoundary';
