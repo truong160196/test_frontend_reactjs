@@ -35,7 +35,7 @@ $ npm start
 
 ## Running Test
 
-Run the URL: http://localhost:8080/
+Run the URL: http://localhost:3006/
 
 ## Running Test code
 ```sh
