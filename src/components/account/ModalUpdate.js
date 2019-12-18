@@ -1,14 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import './account.css';
 
 import * as Types from '../../constant/ActionTypes';
-
-import {
-    actUploadImage,
-    actPostUpdate,
-} from '../../actions/account/index';
 
 class ModalUpdate extends React.Component {
     constructor(props) {
@@ -18,16 +12,12 @@ class ModalUpdate extends React.Component {
         this.state = props.account.model;
     }
 
-    componentDidMount = async() => {
-        //
-    }
-
     componentWillReceiveProps = (props) => {
         const {account} = props;
 
         const {imageAvatar} = this.state;
 
-        if (account && account.image !== imageAvatar) {
+        if (account  && account.image && account.image !== imageAvatar) {
             this.setState({
                 imageAvatar: account.image
             })
@@ -58,7 +48,7 @@ class ModalUpdate extends React.Component {
             const checkRegex = validEmailRegex.test(value);
 
             if (checkRegex === false && value) {
-                dataState[name].error = 'Phone is number type'
+                dataState[name].error = 'Please enter a valid phone number'
             } else {
                 dataState[name].error = ''
             }
@@ -70,7 +60,10 @@ class ModalUpdate extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const {postUpdate} = this.props;
+        const {
+            postUpdate,
+            closeModalUpdate,
+        } = this.props;
 
         const {
             idStore,
@@ -105,6 +98,8 @@ class ModalUpdate extends React.Component {
         }
 
         postUpdate(request);
+
+        closeModalUpdate(false);
     }
 
     handleSelectImage() {
@@ -183,6 +178,7 @@ class ModalUpdate extends React.Component {
                                 >
                                     <img
                                         src={imageAvatar}
+                                        alt="logo"
                                     />
                                 </div>
                                 <input
@@ -347,8 +343,10 @@ class ModalUpdate extends React.Component {
                                             Save
                                         </button>
                                         <button
+                                            type="button"
                                             className="btn btn-secondary btn-cancel"
-                                            >
+                                            onClick={this.closeModal}
+                                        >
                                             Cancel
                                         </button>
                                     </div>
@@ -362,15 +360,4 @@ class ModalUpdate extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({ ...state });
-
-const mapDispatchToProps = dispatch => ({
-    uploadImage: request => {
-      dispatch(actUploadImage(request));
-    },
-    postUpdate: request => {
-        dispatch(actPostUpdate(request));
-      },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUpdate);
+export default ModalUpdate;

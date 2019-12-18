@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import axios from 'axios';
 
 import * as Types from '../../constant/ActionTypes';
@@ -27,11 +28,13 @@ export function updateUser(data) {
 export const actGetUser = () => async (dispatch) => {
   const urlString = Types.API_FETCH_USER;
 
-  axios.get(urlString).then((res) => {
-
+  await axios.get(urlString).then((res) => {
     if (res.status === 200) {
-      return dispatch(fetchUser(res.data));
+      const {
+        data,
+      } = res;
 
+      return dispatch(fetchUser(data));
     }
   }).catch((e) => {
     const { response } = e;
@@ -53,6 +56,11 @@ export const actUploadImage = request => async (dispatch) => {
     axios.post(urlString, data).then((res) => {
   
       if (res.status === 200) {
+        NotificationManager.success(
+          'Upload image successfully',
+          'Success',
+          5000
+        );
         return dispatch(uploadImage(res.data));
   
       }
@@ -77,9 +85,24 @@ export const actUploadImage = request => async (dispatch) => {
     axios.post(urlString, data).then((res) => {
   
       if (res.status === 200) {
-        return dispatch(updateUser(res.data));
-  
+        if (res.data.code === 500) {
+          NotificationManager.error(
+            res.data.msg,
+            'Error',
+            5000
+          );
+        }
+
+        if (res.data.code === 200) {
+          NotificationManager.success(
+            res.data.msg,
+            'Success',
+            5000
+          );
+          return dispatch(updateUser(res.data));
+        }
       }
+
     }).catch((e) => {
       const { response } = e;
       NotificationManager.error(

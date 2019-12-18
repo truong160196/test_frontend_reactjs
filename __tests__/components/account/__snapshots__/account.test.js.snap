@@ -1,0 +1,726 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`⚫ ExecutionHistory correctly render accountComponent update begin 1`] = `
+<section
+  className="body-main"
+>
+  <div
+    className="page-header"
+  >
+    <h4>
+      Store Information
+    </h4>
+  </div>
+  <div
+    className="page-body row"
+  >
+    <div
+      className="col-sm-12 col-lg-5"
+    >
+      <div
+        className="card card-info"
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="avatar"
+          >
+            <img
+              src=""
+            />
+          </div>
+          <h4>
+            STORE INFO.
+          </h4>
+          <table>
+            <tbody>
+              <col
+                width="40%"
+              />
+              <col
+                width="60%"
+              />
+              <tr>
+                <td
+                  className="label"
+                >
+                  Name:
+                </td>
+                <td
+                  className="content"
+                >
+                  K.O.I The.
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="label"
+                >
+                  Address:
+                </td>
+                <td
+                  className="content"
+                >
+                  521 Hồ Tùng Mậu, D1, HCM
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="label"
+                >
+                  Phone #:
+                </td>
+                <td
+                  className="content"
+                >
+                  3388869944
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h4>
+            RED INVOICE INFO.
+          </h4>
+          <table>
+            <tbody>
+              <col
+                width="40%"
+              />
+              <col
+                width="60%"
+              />
+              <tr>
+                <td
+                  className="label"
+                >
+                  Company Name:
+                </td>
+                <td
+                  className="content"
+                >
+                  K.O.I The International Company
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="label"
+                >
+                  Address:
+                </td>
+                <td
+                  className="content"
+                >
+                  9682 Wakehurst Avenue Arlington Heights, IL, 60004
+                </td>
+              </tr>
+              <tr>
+                <td
+                  className="label"
+                >
+                  MST:
+                </td>
+                <td
+                  className="content"
+                >
+                  P77744944
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            className="btn btn-secondary btn-edit-user"
+            onClick={[Function]}
+            type="button"
+          >
+            Edit Profile
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-sm-12 col-lg-7"
+    >
+      <div
+        className="card card-info"
+      >
+        <div
+          className="card-body"
+        >
+          <h5>
+            DELIVERY DEFAULT MESSAGE
+          </h5>
+          <form
+            className="form-update-user"
+          >
+            <div
+              className="form-check"
+            >
+              <input
+                className="form-check-input"
+                id="exampleCheck1"
+                type="checkbox"
+              />
+              <textarea
+                className="form-control"
+                placeholder="Write your message"
+                rows="2"
+              />
+            </div>
+            <div
+              className="form-check disabled"
+            >
+              <input
+                className="form-check-input"
+                id="exampleCheck1"
+                type="checkbox"
+              />
+              <textarea
+                className="form-control"
+                placeholder="Write your message"
+                rows="2"
+              />
+            </div>
+            <div
+              className="form-check disabled"
+            >
+              <input
+                className="form-check-input"
+                id="exampleCheck1"
+                type="checkbox"
+              />
+              <textarea
+                className="form-control"
+                placeholder="Write your message"
+                rows="2"
+              />
+            </div>
+            <div
+              className="form-check disabled"
+            >
+              <input
+                className="form-check-input"
+                id="exampleCheck1"
+                type="checkbox"
+              />
+              <textarea
+                className="form-control"
+                placeholder="Write your message"
+                rows="2"
+              />
+            </div>
+            <div
+              className="form-check disabled"
+            >
+              <input
+                className="form-check-input"
+                id="exampleCheck1"
+                type="checkbox"
+              />
+              <textarea
+                className="form-control"
+                placeholder="Write your message"
+                rows="2"
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <button
+                className="btn btn-secondary btn-update"
+                type="button"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      className="modal modal-update-user "
+      id="modal-user"
+      tabindex="-1"
+    >
+      <div
+        className="modal-dialog"
+        role="document"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <i
+              class="fas fa-edit"
+            />
+            <h5
+              className="modal-title"
+            >
+              EDIT STORE PROFILE
+            </h5>
+            <button
+              aria-label="Close"
+              className="close"
+              data-dismiss="modal"
+              onClick={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            className="modal-body row"
+          >
+            <div
+              className="col-sm-12 col-lg-4"
+            >
+              <h4>
+                STORE IMAGE
+              </h4>
+              <div
+                className="avatar"
+                onClick={[Function]}
+              >
+                <img
+                  src=""
+                />
+              </div>
+              <input
+                accept="image/png, image/jpeg, image/jpg"
+                id="upload"
+                type="file"
+              />
+              <div
+                className="btn-group"
+              >
+                <button
+                  className="btn btn-secondary btn-remove"
+                  type="button"
+                >
+                  Remove
+                </button>
+                <button
+                  className="btn btn-secondary btn-upload"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Upload Image
+                </button>
+              </div>
+            </div>
+            <div
+              className="col-sm-12 col-lg-8"
+            >
+              <form
+                className="form-update"
+              >
+                <h4>
+                  BASIC INFO
+                </h4>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Store Name
+                  </label>
+                  <input
+                    className="form-control"
+                    name="nameStore"
+                    onChange={[Function]}
+                    placeholder="Store Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Store Address
+                  </label>
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="col-sm-12 col-lg-6"
+                    >
+                      <input
+                        className="form-control"
+                        name="addressStore"
+                        onChange={[Function]}
+                        placeholder="Address"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="col-sm-12 col-lg-3"
+                    >
+                      <select
+                        className="form-control"
+                        name="districtStore"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option>
+                          District
+                        </option>
+                        <option
+                          value="Ward 1"
+                        >
+                          Ward 1
+                        </option>
+                        <option
+                          value="Ward 2"
+                        >
+                          Ward 2
+                        </option>
+                        <option
+                          value="Ward 3"
+                        >
+                          Ward 3
+                        </option>
+                        <option
+                          value="Ward 4"
+                        >
+                          Ward 4
+                        </option>
+                        <option
+                          value="Ward 5"
+                        >
+                          Ward 5
+                        </option>
+                        <option
+                          value="Ward 6"
+                        >
+                          Ward 6
+                        </option>
+                        <option
+                          value="Ward 7"
+                        >
+                          Ward 7
+                        </option>
+                        <option
+                          value="Ward 8"
+                        >
+                          Ward 8
+                        </option>
+                        <option
+                          value="Ward 9"
+                        >
+                          Ward 9
+                        </option>
+                        <option
+                          value="Ward 10"
+                        >
+                          Ward 10
+                        </option>
+                        <option
+                          value="Ward 11"
+                        >
+                          Ward 11
+                        </option>
+                        <option
+                          value="Ward 12"
+                        >
+                          Ward 12
+                        </option>
+                        <option
+                          value="Bình Tân Ward"
+                        >
+                          Bình Tân Ward
+                        </option>
+                        <option
+                          value="Bình Thạnh Ward"
+                        >
+                          Bình Thạnh Ward
+                        </option>
+                        <option
+                          value="Gò Vấp Ward"
+                        >
+                          Gò Vấp Ward
+                        </option>
+                        <option
+                          value="Phú Nhuận Ward"
+                        >
+                          Phú Nhuận Ward
+                        </option>
+                        <option
+                          value="Tân Bình Ward"
+                        >
+                          Tân Bình Ward
+                        </option>
+                        <option
+                          value="Tân Phú Ward"
+                        >
+                          Tân Phú Ward
+                        </option>
+                        <option
+                          value="Thủ Đức Ward"
+                        >
+                          Thủ Đức Ward
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      className="col-sm-12 col-lg-3"
+                    >
+                      <select
+                        className="form-control"
+                        name="cityStore"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option>
+                          City
+                        </option>
+                        <option
+                          value="Ho Chi Minh"
+                        >
+                          Ho Chi Minh
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Phone #
+                  </label>
+                  <input
+                    autocomplete="off"
+                    className="form-control"
+                    name="phoneStore"
+                    onChange={[Function]}
+                    placeholder="Phone"
+                    type="text"
+                    value=""
+                  />
+                  <p
+                    className="error"
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                  >
+                    
+                  </p>
+                </div>
+                <h4>
+                  RED INVOICE INFO
+                </h4>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Company Name
+                  </label>
+                  <input
+                    className="form-control"
+                    name="nameRedInvoice"
+                    onChange={[Function]}
+                    placeholder="Company Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Company Address
+                  </label>
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="col-sm-12 col-lg-6"
+                    >
+                      <input
+                        className="form-control"
+                        name="addressRedInvoice"
+                        onChange={[Function]}
+                        placeholder="Address"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="col-sm-12 col-lg-3"
+                    >
+                      <select
+                        className="form-control"
+                        name="districtRedInvoice"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option>
+                          District
+                        </option>
+                        <option
+                          value="Ward 1"
+                        >
+                          Ward 1
+                        </option>
+                        <option
+                          value="Ward 2"
+                        >
+                          Ward 2
+                        </option>
+                        <option
+                          value="Ward 3"
+                        >
+                          Ward 3
+                        </option>
+                        <option
+                          value="Ward 4"
+                        >
+                          Ward 4
+                        </option>
+                        <option
+                          value="Ward 5"
+                        >
+                          Ward 5
+                        </option>
+                        <option
+                          value="Ward 6"
+                        >
+                          Ward 6
+                        </option>
+                        <option
+                          value="Ward 7"
+                        >
+                          Ward 7
+                        </option>
+                        <option
+                          value="Ward 8"
+                        >
+                          Ward 8
+                        </option>
+                        <option
+                          value="Ward 9"
+                        >
+                          Ward 9
+                        </option>
+                        <option
+                          value="Ward 10"
+                        >
+                          Ward 10
+                        </option>
+                        <option
+                          value="Ward 11"
+                        >
+                          Ward 11
+                        </option>
+                        <option
+                          value="Ward 12"
+                        >
+                          Ward 12
+                        </option>
+                        <option
+                          value="Bình Tân Ward"
+                        >
+                          Bình Tân Ward
+                        </option>
+                        <option
+                          value="Bình Thạnh Ward"
+                        >
+                          Bình Thạnh Ward
+                        </option>
+                        <option
+                          value="Gò Vấp Ward"
+                        >
+                          Gò Vấp Ward
+                        </option>
+                        <option
+                          value="Phú Nhuận Ward"
+                        >
+                          Phú Nhuận Ward
+                        </option>
+                        <option
+                          value="Tân Bình Ward"
+                        >
+                          Tân Bình Ward
+                        </option>
+                        <option
+                          value="Tân Phú Ward"
+                        >
+                          Tân Phú Ward
+                        </option>
+                        <option
+                          value="Thủ Đức Ward"
+                        >
+                          Thủ Đức Ward
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      className="col-sm-12 col-lg-3"
+                    >
+                      <select
+                        className="form-control"
+                        name="cityRedInvoice"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option>
+                          City
+                        </option>
+                        <option
+                          value="Ho Chi Minh"
+                        >
+                          Ho Chi Minh
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    MST
+                  </label>
+                  <input
+                    className="form-control"
+                    name="taxRedInvoice"
+                    onChange={[Function]}
+                    placeholder="MST"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="form-group button-submit"
+                >
+                  <button
+                    className="btn btn-secondary btn-save 
+                                            "
+                    onClick={[Function]}
+                  >
+                    Save
+                  </button>
+                  <button
+                    className="btn btn-secondary btn-cancel"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

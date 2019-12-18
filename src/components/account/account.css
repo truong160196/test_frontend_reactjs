@@ -288,6 +288,12 @@
     margin: 15px;
 }
 
+.modal-update-user .modal-body .btn-group .btn-upload:hover,
+.modal-update-user .modal-body .btn-group .btn-upload:focus
+{
+   opacity: 0.7;
+}
+
 .modal-update-user .form-update {
     position: relative;
 }

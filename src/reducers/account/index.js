@@ -78,7 +78,7 @@ const account = (state = initialState, action = {}) => {
       };
 
       if (state.user && state.user.logoUrl) {
-        state.model.imageAvatar.value = state.user.logoUrl;
+        state.model.imageAvatar = state.user.logoUrl;
       };
 
       if (state.user && state.user.redInvoices && state.user.redInvoices.id) {

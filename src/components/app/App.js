@@ -5,6 +5,7 @@ import './App.css';
 import Header from '../layout/header/Header';
 import Sidebar from '../layout/navbar/Sidebar'
 import Account from '../account/Account'
+import { NotificationContainer } from 'react-notifications';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
           <div id="body-content">
               <Account />
           </div>
+          <NotificationContainer />
       </div>
     );
   }

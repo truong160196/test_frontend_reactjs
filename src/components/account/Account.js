@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 
 import './account.css';
 
-import * as Types from '../../constant/ActionTypes';
-
 import {
-    actUploadImage,
     actGetUser,
+    actUploadImage,
+    actPostUpdate,
 } from '../../actions/account/index';
 
 //import component
@@ -20,13 +19,11 @@ class Account extends React.Component {
             isOpenModal: false
         }
     }
-    
-    componentDidMount = async() => {
+    componentDidMount = () => {
        const { getUser } = this.props;
 
        getUser();
     }
-
     openModalUpdate = () => {
         this.setState({
             isOpenModal: true,
@@ -34,24 +31,23 @@ class Account extends React.Component {
     }
 
     closeModalUpdate = (isConfirm) => {
-        if (isConfirm === true) {
-            //
-        }
-
         this.setState({
             isOpenModal: false,
         })
     }
 
     render() {
-        const {account} = this.props;
+        const {
+            account,
+            uploadImage,
+            postUpdate,
+        } = this.props;
         const {
             isOpenModal,
         } = this.state;
 
         const {user} = account;
         console.log(user);
-
         return (
             <section className="body-main">
                 <div className="page-header">
@@ -62,7 +58,11 @@ class Account extends React.Component {
                         <div className="card card-info">
                             <div className="card-body">
                                 <div className="avatar">
-                                    <img src={user && user.logoUrl ? user.logoUrl : ''}/>
+                                    <img
+                                        src={user && user.logoUrl ? user.logoUrl : ''
+                                        }
+                                        alt="logo"
+                                    />
                                 </div>
                                 <h4>STORE INFO.</h4>
                                 <table>
@@ -151,6 +151,9 @@ class Account extends React.Component {
                     <ModalUpdateAccount
                         isOpenModal={isOpenModal}
                         closeModalUpdate={this.closeModalUpdate}
+                        account={account}
+                        uploadImage={uploadImage}
+                        postUpdate={postUpdate}
                     />
                 </div>
             </section>
@@ -163,7 +166,13 @@ const mapStateToProps = state => ({ ...state });
 const mapDispatchToProps = dispatch => ({
     getUser: () => {
         dispatch(actGetUser());
-      },
+    },
+    uploadImage: request => {
+        dispatch(actUploadImage(request));
+    },
+    postUpdate: request => {
+        dispatch(actPostUpdate(request));
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Account);

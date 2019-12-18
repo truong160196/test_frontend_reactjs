@@ -5,8 +5,48 @@
   "scripts": {
     "start": "set REACT_APP_ENV=production && set PORT=3006 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest -u --coverage",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "bail": 1,
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>__tests__/setup/setupEnzyme.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "\\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.jsx",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.jsx"
+    }
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-jest": "^24.5.0",
+    "babel-plugin-styled-components": "^1.6.0",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.5.0",
+    "react-test-renderer": "^16.8.4",
+    "redux-mock-store": "^1.5.3"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

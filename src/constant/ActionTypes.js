@@ -30,4 +30,4 @@ export const UPDATE_USER = "UPDATE_USER";
 
 export const API_UPLOAD_IMAGE = 'http://localhost:8888/api/admin/user/upload'
 export const API_FETCH_USER = 'http://localhost:8888/api/admin/user/detail/1'
-export const API_UPDATE_USER = 'http://localhost:8888/api/admin/user/update/1'
+export const API_UPDATE_USER = 'http://localhost:8888/api/admin/user/update'
